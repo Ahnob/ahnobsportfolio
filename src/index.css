@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+h2 {
+  color: transparent;
+  background-clip: text;
+  background-repeat: no-repeat;
+  background-image: "./assets/photo-1496181133206-80ce9b88a853.avif";
+  color: rgb(22, 17, 17);
+}

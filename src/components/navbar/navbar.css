@@ -1,0 +1,131 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  position: sticky;
+  top: 0;
+  text-decoration: none;
+  z-index: 10; /* Keeps navbar on top */
+  backdrop-filter: blur(10px); /* Adds blur effect for aesthetic */
+  transition: all 0.3s ease-in-out;
+}
+
+/* Logo styling */
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+  flex-grow: 1; /* Ensures logo stays on the left */
+  transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.logo:hover {
+  color: grey;
+}
+
+/* Nav Links for Desktop */
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover effect for nav links */
+.nav-link:hover {
+  font-weight: 700;
+  color: grey;
+}
+
+/* Flex layout for left and right sections */
+.left-section {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.right-section {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center; /* Ensures the menu icon aligns properly */
+}
+
+/* Mobile Menu */
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+}
+
+.menu-icon .bar {
+  width: 100%;
+  height: 4px;
+  background-color: #333;
+  transition: all 0.4s ease;
+}
+
+/* Mobile Menu Styles */
+@media (max-width: 768px) {
+  /* Nav links on mobile */
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    gap: 2rem;
+    padding-top: 2rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: opacity 0.4s ease, visibility 0.4s, transform 0.4s ease;
+  }
+
+  /* Display the nav-links when toggled */
+  .nav-links.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  /* Menu icon styling */
+  .menu-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+  }
+
+  /* Bar transitions to create hamburger effect */
+  .bar.open:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .bar.open:nth-child(2) {
+    opacity: 0;
+  }
+
+  .bar.open:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+}

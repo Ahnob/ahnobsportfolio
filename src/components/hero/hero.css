@@ -1,0 +1,82 @@
+.hero-section {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #323030;
+  text-align: center;
+  position: relative;
+  background-image: url("../../assets/portfolio-image.avif");
+}
+
+.logo {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 24px;
+  margin-left: 20px;
+  margin-top: 15px;
+}
+
+.hero-content {
+  opacity: 0; /* Initially hidden */
+  transform: translateY(50px); /* Start slightly lower */
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out; /* Longer transition */
+  transition-delay: 0.5s; /* Delay the appearance */
+  color: black;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+  transition-delay: 0.5s; /* Delay the reveal */
+}
+
+.reveal.active {
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Reset position */
+}
+
+.typing-text {
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  white-space: nowrap;
+  border-right: 2px solid white;
+  overflow: hidden;
+  animation: blink 0.7s step-end infinite;
+  color: #131312;
+}
+
+.hero-paragraph {
+  font-size: 25px;
+  color: #323030;
+  font-weight: 600;
+}
+
+.hero-h1 {
+  font-size: 44px;
+}
+
+@keyframes blink {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: rgb(231, 173, 173);
+  }
+}
+
+.social-icons a {
+  margin: 0 15px;
+  color: #0c0c0b;
+  font-size: 30px;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #161c1f;
+}
